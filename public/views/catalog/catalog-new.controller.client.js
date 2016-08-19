@@ -21,25 +21,16 @@
             }*/
             var post = {};
 
-            post._user = vm.uid;
-            console.log("User: " + vm.uid);
-            post.text = vm.text;
-            console.log("Text: " + vm.text);
-            post.type = vm.type;
-            console.log("Type: " + vm.type);
-            //TODO change from uid to Username Requires Promise
-            post.user = vm.user.username;
-            console.log("User: " + vm.user.username);
-            post.destination = vm.destination;
-            console.log("Destination: " + vm.destination);
-            post.pickup = vm.pickup;
-            console.log("Pickup Location: " + vm.pickup);
-            post.pickupTime = vm.pickupTime;
-            console.log("Pickup Time: " + vm.pickupTime);
+            post.PN = vm.PN;
+            console.log("Part Number: " + vm.PN);
+            post.MPN = vm.MPN;
+            console.log("Man Part Number: " + vm.MPN);
+            post.Description = vm.Description;
+            console.log("Description: " + vm.Description);
 
             BlogService.createPost(post)
                 .then(function(response) {
-                    $location.url("/user/" + vm.uid + "/blog/" + vm.type);
+                    $location.url("/catalog");
                 });
         }
     }

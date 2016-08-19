@@ -17,12 +17,12 @@
             var url = "/hike/blog/search/" + query;
             return $http.get(url);
         }
-        function createPost(post) {
-            var url = "/hike/blog/createPost";
+        function createPart(post) {
+            var url = "/catalog";
             return $http.post(url, post);
         }
         function getAllPosts() {
-            var url = "/hike/blog/getPosts";
+            var url = "/catalog";
             return $http.get(url);
         }
         function getPostById(postId) {
