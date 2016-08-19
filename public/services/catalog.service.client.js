@@ -17,7 +17,7 @@
             var url = "/hike/blog/search/" + query;
             return $http.get(url);
         }
-        function createPart(post) {
+        function createPost(post) {
             var url = "/catalog";
             return $http.post(url, post);
         }
