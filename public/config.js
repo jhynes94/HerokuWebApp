@@ -71,7 +71,7 @@
             })
             .when("/catalog", {
                 templateUrl: "views/catalog/catalog-list.view.client.html",
-                controller: "catalogListController",
+                controller: "CatalogListController",
                 controllerAs: "model"
             })
             .when("/blog", {
