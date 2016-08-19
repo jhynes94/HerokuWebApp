@@ -24,8 +24,12 @@
             CatalogService
                 .deletePost(id)
                 .then(function (response) {
-                    console.log(response.data);
-                    vm.posts = response.data;
+                    CatalogService
+                        .getAllPosts()
+                        .then(function (response) {
+                            console.log(response.data);
+                            vm.posts = response.data;
+                        });
                 });
         }
 
