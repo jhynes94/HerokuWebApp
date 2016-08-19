@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-static-top">
-    <div class="Left_Icon"><a href="#/user/{{model.uid}}/blog/{{model.type}}"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></a></div>
+    <div class="Left_Icon"><a href="#/catalog"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></a></div>
     <h3>New {{model.type}} Post</h3>
 </nav>
 
@@ -7,7 +7,7 @@
 <div class="container" ng-switch on="model.type">
     <div ng-if="model.error" class="alert alert-danger">{{model.error}}</div>
 
-    <form method="post" action="/path/to/form/service" ng-switch-when="HIKER">
+    <form method="post" action="/path/to/form/service">
         <fieldset class="form-group">
             <div class="form-group">
                 <label for="name">Goal Destination</label>
@@ -24,34 +24,6 @@
             <div class="form-group">
                 <label for="comment">Ideal Pickup Location</label>
                 <textarea ng-model="model.pickup" class="form-control" placeholder="Description" id="comment"></textarea>
-            </div>
-        </fieldset>
-        <fieldset class="form-group">
-            <div class="form-group">
-                <label for="comment">Details on Trip</label>
-                <textarea ng-model="model.text" class="form-control" rows="5" placeholder="Description" id="comment"></textarea>
-            </div>
-        </fieldset>
-    </form>
-
-
-    <form method="post" action="/path/to/form/service" ng-switch-when="DRIVER">
-        <fieldset class="form-group">
-            <div class="form-group">
-                <label for="name">Departure Time</label>
-                <input ng-model="model.pickupTime" type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-        </fieldset>
-        <fieldset class="form-group">
-            <div class="form-group">
-                <label for="name">Departure Location</label>
-                <input ng-model="model.pickup" type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-        </fieldset>
-        <fieldset class="form-group">
-            <div class="form-group">
-                <label for="name">Destination</label>
-                <input ng-model="model.destination" type="text" class="form-control" id="name" placeholder="Name">
             </div>
         </fieldset>
         <fieldset class="form-group">
