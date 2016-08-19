@@ -114,6 +114,7 @@ app.delete("/contacts/:id", function(req, res) {
 
 var CATALOG_COLLECTION = "catalog";
 
+//Get list of ENTIRE catalog objects
 app.get("/catalog", function(req, res) {
   db.collection(CATALOG_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
@@ -124,6 +125,7 @@ app.get("/catalog", function(req, res) {
   });
 });
 
+//Post a Part
 app.post("/catalog", function(req, res) {
   var newPart = req.body;
   newPart.createDate = new Date();
@@ -141,4 +143,16 @@ app.post("/catalog", function(req, res) {
       res.status(201).json(doc.ops[0]);
     }
   });
+
+  //Delete a part
+  app.delete("/catalog/:id", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+      if (err) {
+        handleError(res, err.message, "Failed to delete contact");
+      } else {
+        res.status(204).end();
+      }
+    });
+  });
+
 });

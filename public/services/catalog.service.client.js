@@ -34,7 +34,7 @@
             return $http.put(url, post);
         }
         function deletePost(postId) {
-            var url = "/hike/blog/" + postId;
+            var url = "/catalog/" + postId;
             return $http.delete(url);
         }
     }

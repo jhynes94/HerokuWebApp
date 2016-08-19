@@ -17,6 +17,16 @@
         }
         init();
 
+        function delete(id) {
+            console.log("Deleteing item: " + id);
+            CatalogService
+                .deletePost(id)
+                .then(function (response) {
+                    console.log(response.data);
+                    vm.posts = response.data;
+                });
+        }
+
         function search(query) {
             console.log("Searching for: " + query);
             CatalogService
