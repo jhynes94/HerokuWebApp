@@ -69,6 +69,11 @@
                 controllerAs: "model",
                 resolve: { "loggedin": checkLoggedin }
             })
+            .when("/catalog", {
+                templateUrl: "views/catalog/catalog-list-outside.view.client.html",
+                controller: "catalogListController",
+                controllerAs: "model"
+            })
             .when("/blog", {
                 templateUrl: "views/blog/blog-list-outside.view.client.html",
                 controller: "BlogListController",
