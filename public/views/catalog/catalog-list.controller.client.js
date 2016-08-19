@@ -6,6 +6,7 @@
     function CatalogListController($routeParams, CatalogService, $sce) {
         var vm = this;
         vm.search = search;
+        vm.delete = delete;
 
         function init() {
             CatalogService
