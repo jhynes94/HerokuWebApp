@@ -143,16 +143,15 @@ app.post("/catalog", function(req, res) {
       res.status(201).json(doc.ops[0]);
     }
   });
+});
 
-  //Delete a part
-  app.delete("/catalog/:id", function(req, res) {
-    db.collection(CATALOG_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
-      if (err) {
-        handleError(res, err.message, "Failed to delete contact");
-      } else {
-        res.status(204).end();
-      }
-    });
+//Delete a part
+app.delete("/catalog/:id", function(req, res) {
+  db.collection(CATALOG_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    if (err) {
+      handleError(res, err.message, "Failed to delete contact");
+    } else {
+      res.status(204).end();
+    }
   });
-
 });
