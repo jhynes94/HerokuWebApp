@@ -74,34 +74,6 @@
                 controller: "BlogListController",
                 controllerAs: "model"
             })
-            .when("/blog/:filter", {
-                templateUrl: "views/blog/blog-list-outside.view.client.html",
-                controller: "BlogListController",
-                controllerAs: "model"
-            })
-            .when("/weather", {
-                templateUrl: "views/weather/weather.view.client.html",
-                controller: "WeatherController",
-                controllerAs: "model"
-            })
-            .when("/user/:uid/blog/:type", {
-                templateUrl: "views/blog/blog-list.view.client.html",
-                controller: "BlogListController",
-                controllerAs: "model",
-                resolve: { "loggedin": checkLoggedin }
-            })
-            .when("/user/:uid/post/:type", {
-                templateUrl: "views/blog/blog-new.view.client.html",
-                controller: "NewBlogController",
-                controllerAs: "model",
-                resolve: { "loggedin": checkLoggedin }
-            })
-            .when("/user/:uid/post/:type", {
-                templateUrl: "views/blog/blog-new.view.client.html",
-                controller: "NewBlogController",
-                controllerAs: "model",
-                resolve: { "loggedin": checkLoggedin }
-            })
             .otherwise({
                 redirectTo: "/login"
             });
