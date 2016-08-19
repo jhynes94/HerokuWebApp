@@ -70,7 +70,7 @@
                 resolve: { "loggedin": checkLoggedin }
             })
             .when("/catalog", {
-                templateUrl: "views/catalog/catalog-list-outside.view.client.html",
+                templateUrl: "views/catalog/catalog-list.view.client.html",
                 controller: "catalogListController",
                 controllerAs: "model"
             })
