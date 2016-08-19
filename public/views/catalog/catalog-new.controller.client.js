@@ -28,7 +28,7 @@
             post.Description = vm.Description;
             console.log("Description: " + vm.Description);
 
-            BlogService.createPost(post)
+            CatalogService.createPost(post)
                 .then(function(response) {
                     $location.url("/catalog");
                 });

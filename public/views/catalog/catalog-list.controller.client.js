@@ -19,7 +19,7 @@
 
         function search(query) {
             console.log("Searching for: " + query);
-            BlogService
+            CatalogService
                 .search(query)
                 .then(function (response) {
                     console.log(response.data);
