@@ -6,6 +6,7 @@
     function CatalogListController($routeParams, CatalogService, $sce) {
         var vm = this;
         vm.search = search;
+        vm.deletePart = deletePart
 
         function init() {
             CatalogService
@@ -17,8 +18,8 @@
         }
         init();
 
-/*
-        function delete(id) {
+
+        function deletePart(id) {
             console.log("Deleteing item: " + id);
             CatalogService
                 .deletePost(id)
@@ -26,7 +27,7 @@
                     console.log(response.data);
                     vm.posts = response.data;
                 });
-        }*/
+        }
 
         function search(query) {
             console.log("Searching for: " + query);
