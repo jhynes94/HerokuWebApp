@@ -8,8 +8,6 @@
             createPost: createPost,
             getAllPosts: getAllPosts,
             getPostById: getPostById,
-            DriversForHikers: DriversForHikers,
-            HikersForDrivers: HikersForDrivers,
             updatePost: updatePost,
             search: search,
             deletePost: deletePost  };
@@ -19,7 +17,6 @@
             var url = "/hike/blog/search/" + query;
             return $http.get(url);
         }
-
         function createPost(post) {
             var url = "/hike/blog/createPost";
             return $http.post(url, post);
@@ -30,14 +27,6 @@
         }
         function getPostById(postId) {
             var url = "/hike/blog/" + postId;
-            return $http.get(url);
-        }
-        function DriversForHikers() {
-            var url = "/hike/blog/DriversForHikers";
-            return $http.get(url);
-        }
-        function HikersForDrivers() {
-            var url = "/hike/blog/HikersForDrivers";
             return $http.get(url);
         }
         function updatePost(postId, post) {
