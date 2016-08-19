@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("CatalogListController", CatalogListController);
 
-    function CatalogListController($routeParams, BlogService, UserService, $sce) {
+    function CatalogListController($routeParams, CatalogService, $sce) {
         var vm = this;
         vm.filtersHiker = filtersHiker;
         vm.filtersDrivers = filtersDrivers;

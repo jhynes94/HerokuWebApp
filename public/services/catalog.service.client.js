@@ -1,6 +1,6 @@
 (function() {
     angular.module("WebAppMaker")
-        .factory("CatalogService", BlogService);
+        .factory("CatalogService", CatalogService);
 
     function CatalogService($http) {
 

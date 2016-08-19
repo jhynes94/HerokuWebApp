@@ -3,14 +3,14 @@
         .module("WebAppMaker")
         .controller("NewCatalogController", NewCatalogController);
 
-    function NewCatalogController($routeParams, BlogService, UserService, $location) {
+    function NewCatalogController($routeParams, CatalogService, $location) {
         var vm = this;
         vm.uid = $routeParams["uid"];
         vm.type = $routeParams["type"];
         vm.createPost = createPost;
 
         function init() {
-          
+
         }
         init();
 
