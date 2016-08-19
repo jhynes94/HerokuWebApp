@@ -1,45 +1,241 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="contactsApp">
-  <head>
+<html lang="en">
+
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <!-- Angular lib -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <!-- Create some padding for body -->
-    <style>
-      body {
-        min-height: 2000px;
-        padding-top: 70px;
-      }
-    </style>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <script src="/js/app.js"></script>
-  </head>
+    <title>Justin Hynes-Bruell</title>
 
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+    <!-- Bootstrap Core CSS -->
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="CSS/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://megaicons.net/static/img/icons_title/367/1039/title/letter-j-blue-icon.png" />`
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <div class="navbar-brand" href="#/">mLab Contact List</div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Justin Hynes-Bruell</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#/">Home</a></li>
-          </ul>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="project/index.html">Project</a>
+                </li>
+                <li>
+                    <a href="assignment/index.html">Assignment</a>
+                </li>
+                <li>
+                    <a href="test/index.html">Test MongoDB</a>
+                </li>
+                <li>
+                    <a href="https://github.com/jhynes94/Hynes-Bruell-Justin-web-dev.git">Github</a>
+                </li>
+                <li>
+                    <a href="#">Video</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assignments<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">Assignment 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Assignment 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Assignment 3</a>
+                        </li>
+                        <li>
+                            <a href="#">Assignment 4</a>
+                        </li>
+                        <li>
+                            <a href="#">Assignment 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Assignment 6</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
-    <!-- Dynamically render templates -->
-    <div class="container" ng-view>
+        <!-- /.navbar-collapse -->
     </div>
-  </body>
+    <!-- /.container -->
+</nav>
+
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('images/Justin.jpg');"></div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/20400006.JPG');"></div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/ICE.PNG');"></div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
+
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Features Section -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Video</h2>
+        </div>
+        <div class="col-md-6">
+            <p>This is my project video!</p></div>
+
+        <div class="col-lg-12"><a href="project/index.html" class="btn btn-primary btn-lg" style="min-width: 100%;" role="button">Video</a></div>
+
+        <div class="col-md-6">
+            <<div class="embed-responsive embed-responsive-4by3">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/A1T0iSc08SA"></iframe>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Project</h2>
+        </div>
+        <div class="col-md-6">
+            <p>This is a link to my project. Hike 4000 is a ride sharing web app for hikers. It enables users to find other hikers to share an adventure, as well as:</p></div>
+
+        <div class="col-md-6">
+            <ul>
+                <li><strong>Find a Ride!</strong></li>
+                <li><strong>Fill your car!</strong></li>
+                <li>Determine weather of Destination (NH)</li>
+                <li>Search for Users, destinations, times, and pickup locations</li>
+                <li>Make Friends!</li>
+            </ul></div>
+
+        <div class="col-lg-12"><a href="project/index.html" class="btn btn-primary btn-lg" style="min-width: 100%;" role="button">Project</a></div>
+
+        <div class="col-md-12"><p></p></div>
+
+        <div class="col-md-6">
+            <img class="img-responsive" src="http://images.everytrail.com/pics/fullsize/2503494-Lafayette__Lincoln__Liberty__Flume_July_97_02__007.jpg" alt="">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Assignments</h2>
+        </div>
+        <div class="col-md-6">
+            <p>This is a link to all of the assignments I've worked on</p></div>
+
+        <div class="col-lg-12"><a  href="assignment/index.html" class="btn btn-primary btn-lg" style="min-width: 100%;" role="button">Assignments</a></div>
+
+        <div class="col-md-12"><p></p></div>
+
+        <div class="col-md-6">
+            <img class="img-responsive" src="http://www.joeydevilla.com/wordpress/wp-content/uploads/2013/12/yours-truly-hard-at-work.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Github</h2>
+        </div>
+        <div class="col-md-6">
+            <p>This is a link to my Github</p></div>
+
+        <div class="col-lg-12"><a href="https://github.com/jhynes94/Hynes-Bruell-Justin-web-dev.git" class="btn btn-primary btn-lg" style="min-width: 100%;" role="button">Github</a></div>
+
+        <div class="col-md-12"><p></p></div>
+
+        <div class="col-md-6">
+            <img class="img-responsive" src="http://www.molecularecologist.com/wp-content/uploads/2013/11/github-logo.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Mongo DB Test</h2>
+        </div>
+        <div class="col-md-6">
+            <p>A test to make sure MongoDB is working Properly</p></div>
+
+        <div class="col-md-12"><p></p></div>
+
+
+        <div class="col-lg-12"><a href="test/index.html" class="btn btn-primary btn-lg" style="min-width: 100%;" role="button">Test</a></div>
+    </div>
+
+
+
+    <!-- /.row -->
+    <hr>
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+
+</body>
+
 </html>

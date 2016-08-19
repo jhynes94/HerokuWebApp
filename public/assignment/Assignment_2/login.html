@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebAppMaker">
+<head>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/introCSS.css">
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form method="post"
+          action="/path/to/form/service">
+        <fieldset class="form-group">
+            <input name="username"
+                   id="username"
+                   type="text"
+                   placeholder="username"
+                   class="form-control"/>
+        </fieldset>
+        <fieldset class="form-group">
+            <input name="password"
+                   id="password"
+                   type="password"
+                   placeholder="password"
+                   class="form-control"/>
+        </fieldset>
+        <fieldset class="form-group">
+            <a href="profile.html" class="btn btn-block btn-primary" role="button">Login</a>
+        </fieldset>
+        <fieldset class="form-group">
+            <a href="register.html" class="btn btn-block btn-success" role="button">Register</a>
+        </fieldset>
+    </form>
+</body>
+
+</html>
