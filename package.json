@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chrisckchang/mean-contactlist.git"
+    "url": "https://github.com/jhynes94/HerokuWebApp.git"
   },
   "keywords": [
     "MEAN",
     "Express",
     "Angular"
   ],
-  "author": "Chris Chang",
+  "author": "Justin Hynes-Bruell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chrisckchang/mean-contactlist/issues"
+    "url": "https://github.com/jhynes94/HerokuWebApp/issues"
   },
-  "homepage": "https://github.com/chrisckchang/mean-contactlist",
+  "homepage": "https://github.com/jhynes94/HerokuWebApp",
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",

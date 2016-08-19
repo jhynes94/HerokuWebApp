@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
-// Connect to the database before starting the application server. 
+// Connect to the database before starting the application server.
 mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   if (err) {
     console.log(err);
@@ -49,7 +49,7 @@ app.get("/contacts", function(req, res) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
-      res.status(200).json(docs);  
+      res.status(200).json(docs);
     }
   });
 });
@@ -82,7 +82,7 @@ app.get("/contacts/:id", function(req, res) {
     if (err) {
       handleError(res, err.message, "Failed to get contact");
     } else {
-      res.status(200).json(doc);  
+      res.status(200).json(doc);
     }
   });
 });
@@ -106,6 +106,39 @@ app.delete("/contacts/:id", function(req, res) {
       handleError(res, err.message, "Failed to delete contact");
     } else {
       res.status(204).end();
+    }
+  });
+});
+
+///////////////////////////////////////Begin Catalog Code Here/////////////////
+
+var CATALOG_COLLECTION = "catalog";
+
+app.get("/catalog", function(req, res) {
+  db.collection(CATALOG_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get catalog.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
+
+app.post("/catalog", function(req, res) {
+  var newPart = req.body;
+  newPart.createDate = new Date();
+
+//Error Checking
+/*
+  if (!(req.body.firstName || req.body.lastName)) {
+    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+  }
+*/
+  db.collection(CATALOG_COLLECTION).insertOne(newPart, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to create new part.");
+    } else {
+      res.status(201).json(doc.ops[0]);
     }
   });
 });
