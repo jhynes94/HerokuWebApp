@@ -74,6 +74,11 @@
                 controller: "CatalogListController",
                 controllerAs: "model"
             })
+            .when("/catalog/addItem", {
+                templateUrl: "views/catalog/catalog-new.view.client.html",
+                controller: "NewCatalogController",
+                controllerAs: "model"
+            })
             .when("/blog", {
                 templateUrl: "views/blog/blog-list-outside.view.client.html",
                 controller: "BlogListController",
