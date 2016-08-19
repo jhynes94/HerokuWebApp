@@ -1,8 +1,8 @@
 (function() {
     angular.module("WebAppMaker")
-        .factory("BlogService", BlogService);
+        .factory("CatalogService", BlogService);
 
-    function BlogService($http) {
+    function CatalogService($http) {
 
         var api = {
             createPost: createPost,
@@ -19,7 +19,7 @@
             var url = "/hike/blog/search/" + query;
             return $http.get(url);
         }
-        
+
         function createPost(post) {
             var url = "/hike/blog/createPost";
             return $http.post(url, post);

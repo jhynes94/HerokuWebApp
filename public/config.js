@@ -79,11 +79,6 @@
                 controller: "NewCatalogController",
                 controllerAs: "model"
             })
-            .when("/blog", {
-                templateUrl: "views/blog/blog-list-outside.view.client.html",
-                controller: "BlogListController",
-                controllerAs: "model"
-            })
             .otherwise({
                 redirectTo: "/login"
             });

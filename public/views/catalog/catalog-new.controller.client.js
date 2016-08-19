@@ -10,11 +10,7 @@
         vm.createPost = createPost;
 
         function init() {
-            UserService
-                .findUserById(vm.uid)
-                .then(function (response) {
-                    vm.user = response.data;
-                })
+          
         }
         init();
 
