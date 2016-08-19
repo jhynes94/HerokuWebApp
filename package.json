@@ -1,27 +1,30 @@
 {
-  "name": "web-dev",
+  "name": "MEAN",
   "version": "1.0.0",
-  "description": "Web Dev at Northeastern University",
+  "description": "A MEAN app that allows users to manage contact lists",
   "main": "server.js",
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.15.1",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.13.4",
-    "express-session": "^1.13.0",
-    "mongoose": "^4.4.16",
-    "multer": "^1.1.0",
-    "passport": "^0.3.2",
-    "passport-facebook": "^2.1.1",
-    "passport-google": "^0.3.0",
-    "passport-google-oauth": "^1.0.0",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Jose G. Annunziato",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisckchang/mean-contactlist.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Express",
+    "Angular"
+  ],
+  "author": "Chris Chang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisckchang/mean-contactlist/issues"
+  },
+  "homepage": "https://github.com/chrisckchang/mean-contactlist",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "mongodb": "^2.0.43"
+  }
 }
