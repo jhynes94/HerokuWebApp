@@ -109,10 +109,6 @@ h3 {
     padding: 2%;
 }
 
-.partContainer {
-
-}
-
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -169,6 +165,13 @@ a:active {
     padding-left: 5%;
     padding-top: 5%;
 }
+.innerTable {
+    margin-bottom: 0px;
+
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+}
 
 td {
     background-color: dimgray;
@@ -176,9 +179,6 @@ td {
     text-align: center;
 }
 
-tr {
-    min-height: 100px;
-}
 
 .navbar-default {
     color: white;

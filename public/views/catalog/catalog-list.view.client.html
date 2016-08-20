@@ -8,37 +8,64 @@
     <table class="table table-striped">
         <fieldset class="form-group">
             <div class="form-group">
-                <input ng-model="model.searchQuery" type="text" class="form-control" id="name" placeholder="Search Query">
-                <a ng-click="model.search(model.searchQuery)" class="btn btn-block btn-primary" role="button">Search!</a>
+                <input ng-model="model.searchQuery" type="text" class="form-control" id="name"
+                       placeholder="Search Query">
+                <a ng-click="model.search(model.searchQuery)" class="btn btn-block btn-primary"
+                   role="button">Search!</a>
             </div>
         </fieldset>
         <fieldset class="form-group">
             <div class="form-group">
                 <input ng-model="model.barcode" type="text" class="form-control" id="name" placeholder="Barcode">
-                <a ng-click="model.AddPartWithBarcode(model.barcode)" class="btn btn-block btn-primary" role="button">Add Item</a>
+                <a ng-click="model.AddPartWithBarcode(model.barcode)" class="btn btn-block btn-primary" role="button">Add
+                    Item</a>
             </div>
         </fieldset>
+
+
         <tbody ng-repeat="post in model.posts">
         <tr>
+            <td style="padding-bottom: 20px;padding-top: 20px;">
+    <table style="width:100%;">
+        <tbody>
+        <tr>
+            <td colspan="2">
+                <a target="_blank" href="http://www.digikey.com/product-search/en?keywords={{post.PN}}"
+                   class="btn btn-block btn-success" role="button">Link to DigiKey</a>
+            </td>
+        </tr>
+        <tr>
+            <th class="innerTable">
+                <h3>Digi-Key Part Number</h3>
+            </th>
+            <td class="innerTable">
+                <h3>{{post.PN}}</h3>
+            </td>
+        </tr>
+        <tr>
+            <th class="innerTable">
+                <h3>Manufacturer Part Number</h3>
+            </th>
+            <td class="innerTable">
+                <h3>{{post.MPN}}</h3>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <h3>Description</h3>
+            </th>
             <td>
-                <a target="_blank" href="http://www.digikey.com/product-search/en?keywords={{post.PN}}" class="btn btn-block btn-success" role="button">Link to DigiKey</a>
-                <div class="partContainer">
-                    <h3>Part Number: {{post.PN}}</h3>
-                </div>
-                <div class="partContainer">
-                    <h3>Manufacturer Part Number: {{post.MPN}}</h3>
-                </div>
-
-                <div class="partContainer">
-                    <h3>Description: {{post.Description}}</h3>
-                </div>
-
-                <img border="0" ng-src="{{post.url}}" width="{{post.width}}" height="auto">
-
+                <h4>{{post.Description}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
                 <a ng-click="model.deletePart(post._id)" class="btn btn-block btn-danger" role="button">delete</a>
             </td>
-
-
+        </tr>
+        </tbody>
+    </table>
+            </td>
         </tr>
         </tbody>
     </table>
