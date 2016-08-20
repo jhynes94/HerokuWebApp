@@ -168,12 +168,20 @@ a:active {
 .innerTable {
     margin-bottom: 0px;
 
+    width: 50%;
+
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: black;
 }
 
 td {
+    background-color: dimgray;
+    color: white;
+    text-align: center;
+}
+
+th {
     background-color: dimgray;
     color: white;
     text-align: center;
