@@ -147,7 +147,12 @@ app.post("/catalog", function(req, res) {
 app.get("/catalog/barcode/:barcode", function(req, res) {
   console.log("Barcode:" + req.params.barcode);
 
-  
+  var spawn = require("child_process").spawn;
+  var process = spawn('python',["python/helloWorld.py", req.params.barcode]);
+
+  process.stdout.on('data', function (data){
+    console.log("Python program Output: " + data);
+  });
 
   var newPart = {};
   newPart.PN = "Placeholder";
