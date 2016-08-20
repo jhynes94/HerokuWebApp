@@ -10,9 +10,14 @@
             getPostById: getPostById,
             updatePost: updatePost,
             search: search,
+            addPartFromBarcode: addPartFromBarcode,
             deletePost: deletePost  };
         return api;
 
+        function addPartFromBarcode(barcode) {
+            var url = "/catalog/barcode";
+            return $http.post(url, barcode);
+        }
         function search(query) {
             var url = "/hike/blog/search/" + query;
             return $http.get(url);

@@ -130,12 +130,9 @@ app.post("/catalog", function(req, res) {
   var newPart = req.body;
   newPart.createDate = new Date();
 
-//Error Checking
-/*
-  if (!(req.body.firstName || req.body.lastName)) {
-    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+  if (!(req.body.PN || req.body.MPN || req.body.Description)) {
+    handleError(res, "Invalid user input", "Must provide Data of some type!", 400);
   }
-*/
   db.collection(CATALOG_COLLECTION).insertOne(newPart, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new part.");
@@ -144,6 +141,31 @@ app.post("/catalog", function(req, res) {
     }
   });
 });
+
+/*
+//Create a part from Barcode
+app.post("/catalog/barcode", function(req, res) {
+  //var barcode = req.body;
+
+
+  var newPart = {};
+  newPart.PN = "Placeholder";
+  console.log("Part Number: " + newPart.PN);
+  newPart.MPN = "Placeholder";
+  console.log("Man Part Number: " + newPart.MPN);
+  newPart.Description = "Placeholder";
+  console.log("Description: " + newPart.Description);
+
+  newPart.createDate = new Date();
+
+  db.collection(CATALOG_COLLECTION).insertOne(newPart, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to create new part.");
+    } else {
+      res.status(201).json(doc.ops[0]);
+    }
+  });
+});*/
 
 //Delete a part
 app.delete("/catalog/:id", function(req, res) {

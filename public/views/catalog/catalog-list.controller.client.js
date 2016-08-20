@@ -6,7 +6,8 @@
     function CatalogListController($routeParams, CatalogService, $sce) {
         var vm = this;
         vm.search = search;
-        vm.deletePart = deletePart
+        vm.deletePart = deletePart;
+        vm.AddPartWithBarcode = AddPartWithBarcode;
 
         function init() {
             CatalogService
@@ -46,6 +47,15 @@
                     if(vm.filter == "Driver"){
                         filtersDrivers();
                     }
+                });
+        }
+
+        function AddPartWithBarcode(barcode) {
+            console.log("Attempting to add: " + barcode);
+            CatalogService
+                .addPartFromBarcode(barcode)
+                .then(function (response) {
+                    console.log(response.data);
                 });
         }
     }

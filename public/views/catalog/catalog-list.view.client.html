@@ -12,6 +12,12 @@
                 <a ng-click="model.search(model.searchQuery)" class="btn btn-block btn-primary" role="button">Search!</a>
             </div>
         </fieldset>
+        <fieldset class="form-group">
+            <div class="form-group">
+                <input ng-model="model.barcode" type="text" class="form-control" id="name" placeholder="Barcode">
+                <a ng-click="model.AddPartWithBarcode(model.barcode)" class="btn btn-block btn-primary" role="button">Add Item</a>
+            </div>
+        </fieldset>
         <tbody ng-repeat="post in model.posts">
         <tr>
             <td>
