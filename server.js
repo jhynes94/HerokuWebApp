@@ -148,18 +148,18 @@ app.get("/catalog/barcode/:barcode", function(req, res) {
   console.log("Barcode:" + req.params.barcode);
 
   var spawn = require("child_process").spawn;
-  var process = spawn('python',["python/helloWorld.py", req.params.barcode]);
+  var process = spawn('python',["python/digi_reader.py", req.params.barcode]);
 
   process.stdout.on('data', function (data){
-    console.log("Python program Output: " + data);
-  });
+    console.log("\nPython program Output: " + data);
+    var arr = data.toString().split("||");
 
   var newPart = {};
-  newPart.PN = "Placeholder";
+  newPart.PN = arr[1];
   console.log("Part Number: " + newPart.PN);
-  newPart.MPN = "Placeholder";
+  newPart.MPN = arr[2];
   console.log("Man Part Number: " + newPart.MPN);
-  newPart.Description = "Placeholder";
+  newPart.Description = arr[3];
   console.log("Description: " + newPart.Description);
   newPart.createDate = new Date();
 
@@ -176,6 +176,7 @@ app.get("/catalog/barcode/:barcode", function(req, res) {
         }
       });
     }
+  });
   });
 });
 
