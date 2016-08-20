@@ -15,8 +15,8 @@
         return api;
 
         function addPartFromBarcode(barcode) {
-            var url = "/catalog/barcode";
-            return $http.post(url, barcode);
+            var url = "/catalog/barcode/" + barcode;
+            return $http.get(url);
         }
         function search(query) {
             var url = "/hike/blog/search/" + query;

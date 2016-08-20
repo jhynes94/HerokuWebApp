@@ -142,11 +142,12 @@ app.post("/catalog", function(req, res) {
   });
 });
 
-/*
-//Create a part from Barcode
-app.post("/catalog/barcode", function(req, res) {
-  //var barcode = req.body;
 
+//Create a part from Barcode
+app.get("/catalog/barcode/:barcode", function(req, res) {
+  console.log("Barcode:" + req.params.barcode);
+
+  
 
   var newPart = {};
   newPart.PN = "Placeholder";
@@ -155,17 +156,23 @@ app.post("/catalog/barcode", function(req, res) {
   console.log("Man Part Number: " + newPart.MPN);
   newPart.Description = "Placeholder";
   console.log("Description: " + newPart.Description);
-
   newPart.createDate = new Date();
+
 
   db.collection(CATALOG_COLLECTION).insertOne(newPart, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new part.");
     } else {
-      res.status(201).json(doc.ops[0]);
+      db.collection(CATALOG_COLLECTION).find({}).toArray(function(err, docs) {
+        if (err) {
+          handleError(res, err.message, "Failed to get catalog.");
+        } else {
+          res.status(200).json(docs);
+        }
+      });
     }
   });
-});*/
+});
 
 //Delete a part
 app.delete("/catalog/:id", function(req, res) {
