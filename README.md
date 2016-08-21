@@ -4,8 +4,7 @@ Contact List is a RESTful API server and web application built with the MEAN sta
 
 Things to do:
 * Add functionality to add DigiKey PN or Barcode
-* Update List View to better display part
-* Link to DigiKey
+* Re-do Back end Services and Model such that it properly forms a schema
 * Search Functionality
 
 You can deploy a live copy of this application to Heroku with the button below.

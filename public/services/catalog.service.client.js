@@ -19,7 +19,7 @@
             return $http.get(url);
         }
         function search(query) {
-            var url = "/hike/blog/search/" + query;
+            var url = "/api/part?search=" + query;
             return $http.get(url);
         }
         function createPost(post) {

@@ -8,6 +8,7 @@
         vm.search = search;
         vm.deletePart = deletePart;
         vm.AddPartWithBarcode = AddPartWithBarcode;
+        vm.SearchCanceled = SearchCanceled;
 
         function init() {
             CatalogService
@@ -19,6 +20,15 @@
         }
         init();
 
+        function SearchCanceled() {
+            vm.cancelSearch = null;
+            CatalogService
+                .getAllPosts()
+                .then(function (response) {
+                    console.log(response.data);
+                    vm.posts = response.data;
+                });
+        }
 
         function deletePart(id) {
             console.log("Deleteing item: " + id);
@@ -41,13 +51,10 @@
                 .then(function (response) {
                     console.log(response.data);
                     vm.posts = response.data;
-                    if(vm.filter == "Hiker"){
-                        filtersHiker();
-                    }
-                    if(vm.filter == "Driver"){
-                        filtersDrivers();
-                    }
                 });
+
+            //Show Cancel Search Button
+            vm.cancelSearch = 1;
         }
 
         function AddPartWithBarcode(barcode) {

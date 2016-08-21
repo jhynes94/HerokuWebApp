@@ -31,6 +31,11 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   });
 });
 
+
+
+
+
+
 // CONTACTS API ROUTES BELOW
 
 // Generic error handler used by all endpoints.
@@ -187,6 +192,42 @@ app.delete("/catalog/:id", function(req, res) {
       handleError(res, err.message, "Failed to delete contact");
     } else {
       res.status(204).end();
+    }
+  });
+});
+
+
+Array.prototype.unique = function() {
+  var a = this.concat();
+  for(var i=0; i<a.length; ++i) {
+    for(var j=i+1; j<a.length; ++j) {
+      if(a[i] === a[j])
+        a.splice(j--, 1);
+    }
+  }
+
+  return a;
+};
+
+//Search For Part
+app.get("/api/part", function(req, res) {
+  //var query = req.params.query;
+  var query = req.query["search"];
+  console.log("Searched for: " + query);
+
+  db.collection(CATALOG_COLLECTION).find({PN:query}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to Find Item");
+    } else {
+      db.collection(CATALOG_COLLECTION).find({MPN:query}).toArray(function(err, docs2) {
+        if (err) {
+          handleError(res, err.message, "Failed to Find Item");
+        } else {
+          var docsSend = docs.concat(docs2);
+          res.status(200).json(docsSend);
+          console.log(docsSend);
+        }
+      });
     }
   });
 });
