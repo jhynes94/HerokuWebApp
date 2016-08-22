@@ -6,6 +6,11 @@
 
 <div class="container">
     <table class="table table-striped">
+
+        <div ng-if="model.error" class="alert alert-danger">{{model.error}}</div>
+
+        <div ng-if="model.success" class="alert alert-success">{{model.success}}</div>
+
         <fieldset class="form-group">
             <div class="form-group">
                 <input ng-model="model.barcode" type="text" class="form-control" id="name" placeholder="Barcode">
@@ -13,7 +18,7 @@
                     Item from Barcode</a>
             </div>
         </fieldset>
-        <fieldset class="form-group">
+        <fieldset class="form-group" style="margin-bottom: 0px;">
             <div class="form-group">
                 <input ng-model="model.searchQuery" type="text" class="form-control" id="name"
                        placeholder="Search for Digikey PN and Manufacturer Part Numbers here!">
@@ -21,13 +26,11 @@
                    role="button">Search!</a>
             </div>
         </fieldset>
-        <fieldset class="form-group">
-            <div class="form-group">
+        <div class="form-group" style="margin-bottom: 0px;">
                 <a ng-if="model.cancelSearch" ng-click="model.SearchCanceled()" class="btn btn-block btn-warning"
                    role="button">Cancel Search</a>
-            </div>
-        </fieldset>
-
+        </div>
+        <hr>
 
         <tbody ng-repeat="post in model.posts">
         <tr>
@@ -83,14 +86,16 @@
         </tbody>
     </table>
 </div>
-<p></p>
+
+<hr>
+
 <footer class="footer">
     <div class="pull-left">
+        <i ng-click="model.importFile()" class="fa fa-folder-open-o fa-2x"></i>
+        <i ng-click="model.exportFile()" class="fa fa-file-excel-o fa-2x"></i>
         <!--
         <i class="fa fa-area-chart fa-2x"></i>
         <a href="#/weather"><i class="fa fa-sun-o fa-2x"></i></a>
-        <i ng-click="model.filtersDrivers()" class="fa fa-car fa-2x"></i>
-        <i ng-click="model.filtersHiker()" class="fa fa-male fa-2x"></i>
         <i ng-click="model.filtersRest()" class="fa fa-recycle fa-2x"></i>
         -->
     </div>

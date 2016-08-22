@@ -64,6 +64,11 @@
                 .then(function (response) {
                     console.log(response.data);
                     vm.posts = response.data;
+                    vm.success = "Part added from Barcode!";
+                    vm.error = undefined;
+                }, function (error) {
+                        vm.error = "Failed to add barcode";
+                        vm.success = undefined;
                 });
         }
     }
