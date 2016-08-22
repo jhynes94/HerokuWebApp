@@ -69,7 +69,7 @@
                     vm.error = undefined;
                     vm.loading = undefined;
                 }, function (error) {
-                        vm.error = "Failed to add barcode";
+                        vm.error = error.data;
                         vm.success = undefined;
                         vm.loading = undefined;
                 });

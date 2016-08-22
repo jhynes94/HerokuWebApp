@@ -151,7 +151,7 @@ app.get("/catalog/barcode/:barcode", function (req, res) {
     myVar = setTimeout(timeoutFunction, 1000);
 
     function timeoutFunction() {
-        handleError(res, 400, "Failed to add barcode");
+        res.status(400).send("Failed to add barcode");
         //process.kill('SIGHUP');
     }
 
@@ -174,19 +174,45 @@ app.get("/catalog/barcode/:barcode", function (req, res) {
         newPart.createDate = new Date();
 
 
-        db.collection(CATALOG_COLLECTION).insertOne(newPart, function (err, doc) {
+        //check if part is already in DB
+        db.collection(CATALOG_COLLECTION).find({PN: newPart.PN}).toArray(function (err, docs) {
             if (err) {
-                handleError(res, err.message, "Failed to create new part.");
+                handleError(res, err.message, "Failed to Find Item");
             } else {
-                db.collection(CATALOG_COLLECTION).find({}).toArray(function (err, docs) {
+                db.collection(CATALOG_COLLECTION).find({MPN: newPart.MPN}).toArray(function (err, docs2) {
                     if (err) {
-                        handleError(res, err.message, "Failed to get catalog.");
+                        handleError(res, err.message, "Failed to Find Item");
                     } else {
-                        res.status(200).json(docs);
+                        var docsSend = docs.concat(docs2);
+
+                        if (docsSend.length > 0){
+                            console.log("Preventing Duplicate Part");
+                            res.status(400).send("Part Already Exists");
+                        }
+                        else {
+                            AddToDB();
+                        }
                     }
                 });
             }
         });
+
+
+        function AddToDB(){
+            db.collection(CATALOG_COLLECTION).insertOne(newPart, function (err, doc) {
+                if (err) {
+                    handleError(res, err.message, "Failed to create new part.");
+                } else {
+                    db.collection(CATALOG_COLLECTION).find({}).toArray(function (err, docs) {
+                        if (err) {
+                            handleError(res, err.message, "Failed to get catalog.");
+                        } else {
+                            res.status(200).json(docs);
+                        }
+                    });
+                }
+            });
+        }
     });
 });
 
@@ -228,7 +254,7 @@ app.get("/api/part", function (req, res) {
                 if (err) {
                     handleError(res, err.message, "Failed to Find Item");
                 } else {
-                    var docsSend = docs.concat(docs2);
+                    var docsSend = docs.concat(docs2).unique();
                     res.status(200).json(docsSend);
                     console.log(docsSend);
                 }
