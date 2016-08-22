@@ -7,6 +7,11 @@
 <div class="container">
     <table class="table table-striped">
 
+        <fieldset ng-if="model.loading" class="form-group">
+            <img ng-src="http://www.securenet.com/sites/default/files/spinner.gif" width="15%" style="margin-left: 42.5%;
+    margin-right: 42.5%;">
+        </fieldset>
+
         <div ng-if="model.error" class="alert alert-danger">{{model.error}}</div>
 
         <div ng-if="model.success" class="alert alert-success">{{model.success}}</div>

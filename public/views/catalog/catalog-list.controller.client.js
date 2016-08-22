@@ -58,6 +58,7 @@
         }
 
         function AddPartWithBarcode(barcode) {
+            vm.loading = 1;
             console.log("Attempting to add: " + barcode);
             CatalogService
                 .addPartFromBarcode(barcode)
@@ -66,9 +67,11 @@
                     vm.posts = response.data;
                     vm.success = "Part added from Barcode!";
                     vm.error = undefined;
+                    vm.loading = undefined;
                 }, function (error) {
                         vm.error = "Failed to add barcode";
                         vm.success = undefined;
+                        vm.loading = undefined;
                 });
         }
     }

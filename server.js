@@ -152,7 +152,7 @@ app.get("/catalog/barcode/:barcode", function (req, res) {
 
     function timeoutFunction() {
         handleError(res, 400, "Failed to add barcode");
-        process.kill('SIGHUP');
+        //process.kill('SIGHUP');
     }
 
 
